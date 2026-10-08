@@ -125,10 +125,6 @@
         }
         .hero .pitch { color:var(--muted); font-size:1.12rem; max-width:560px; margin-bottom:28px; line-height:1.65; }
         .hero-actions { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px; }
-        .research-block { margin:6px 0 30px; padding:20px 22px; background:var(--sage-soft); border:1px solid var(--border); border-radius:14px; }
-        .research-title { font-size:1.15rem; font-weight:700; color:var(--forest); margin:4px 0 12px; }
-        .research-list { margin:0; padding-left:20px; }
-        .research-list li { font-size:0.93rem; line-height:1.7; color:var(--ink); margin-bottom:6px; }
 
         .social-row { display:flex; gap:10px; flex-wrap:wrap; }
         .social-btn {
@@ -207,32 +203,33 @@
         .pillar p { color:var(--muted); font-size:0.93rem; }
 
         /* ============ SDG Alignment ============ */
-        .sdg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+        .sdg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
         @media (max-width:960px){ .sdg-grid{ grid-template-columns:repeat(2,1fr); } }
         @media (max-width:600px){ .sdg-grid{ grid-template-columns:1fr; } }
         .sdg-card {
             background:#fff; border:1px solid var(--border); border-radius:var(--radius);
-            padding:24px; display:flex; gap:16px; align-items:flex-start;
+            padding:12px 13px; display:flex; gap:10px; align-items:flex-start;
             transition:all .25s; position:relative; overflow:hidden;
         }
         .sdg-card::before {
-            content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--sdg-color,var(--emerald));
+            content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--sdg-color,var(--emerald));
         }
-        .sdg-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); }
+        .sdg-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
         .sdg-card { cursor:pointer; }
-        .sdg-card.active { outline:2px solid var(--emerald); outline-offset:2px; transform:translateY(-3px); box-shadow:var(--shadow-md); }
+        .sdg-card.active { outline:2px solid var(--emerald); outline-offset:2px; transform:translateY(-2px); box-shadow:var(--shadow-md); }
         .proj-card { scroll-margin-top:96px; }
-        .sdg-grid { margin-bottom:34px; }
+        #projGrid { scroll-margin-top:88px; }
+        .sdg-grid { margin-bottom:16px; }
         .sdg-badge {
-            flex-shrink:0; width:56px; height:56px; border-radius:10px;
+            flex-shrink:0; width:40px; height:40px; border-radius:8px;
             background:var(--sdg-color,var(--emerald)); color:#fff;
             display:flex; flex-direction:column; align-items:center; justify-content:center;
             font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; line-height:1;
         }
-        .sdg-badge .num { font-size:1.15rem; }
-        .sdg-badge .slash { font-size:0.6rem; opacity:0.8; font-weight:600; }
-        .sdg-card h4 { font-size:1rem; margin-bottom:6px; }
-        .sdg-card p { color:var(--muted); font-size:0.9rem; line-height:1.55; }
+        .sdg-badge .num { font-size:0.88rem; }
+        .sdg-badge .slash { font-size:0.52rem; opacity:0.8; font-weight:600; }
+        .sdg-card h4 { font-size:0.86rem; margin-bottom:3px; }
+        .sdg-card p { color:var(--muted); font-size:0.79rem; line-height:1.45; }
 
         /* ============ Impact metrics ============ */
         .metrics {
@@ -264,10 +261,10 @@
         /* ============ Projects ============ */
         .kw-row { display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 30px; }
         .kw { background:var(--sage-soft); color:var(--forest); border:1px solid var(--border); border-radius:999px; padding:7px 16px; font-size:0.88rem; font-weight:600; }
-        .kw-groups { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:8px 0 30px; }
-        .kw-group { background:var(--sage-soft); border:1px solid var(--border); border-radius:14px; padding:14px 16px; }
-        .kw-label { font-size:0.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--forest); opacity:.75; margin:0 0 10px; }
-        .kw-group .kw { display:inline-block; margin:3px 6px 3px 0; }
+        .kw-groups { display:grid; grid-template-columns:repeat(auto-fit,minmax(185px,1fr)); gap:10px; margin:8px 0 16px; }
+        .kw-group { background:var(--sage-soft); border:1px solid var(--border); border-radius:10px; padding:9px 11px; }
+        .kw-label { font-size:0.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--forest); opacity:.75; margin:0 0 5px; }
+        .kw-group .kw { display:inline-block; margin:2px 5px 2px 0; font-size:0.84rem; line-height:1.5; }
         .skill-table { width:100%; border-collapse:collapse; table-layout:fixed; background:var(--bg-card); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:var(--shadow-sm); }
         .skill-table th, .skill-table td { padding:16px; font-size:0.92rem; vertical-align:top; text-align:left; border-bottom:1px solid var(--border); }
         .skill-table thead th { background:var(--forest); color:#fff; font-weight:600; }
@@ -616,6 +613,14 @@
                     <div class="tl-desc">与本地中学及 SEN 学生共同设计、向所有人开放的志愿活动。</div>
                 </div>
 
+                <div class="tl-date-cell">2025 – 至今</div>
+                <div class="tl-axis"><div class="tl-dot"></div></div>
+                <div class="tl-item">
+                    <div class="tl-org"><a href="https://sustainhk.my.canva.site/" target="_blank">"Sustain" — 个人品牌与绿色产品线</a></div>
+                    <div class="tl-role">创始人 · 10+ 手作环保产品</div>
+                    <div class="tl-desc">在 WISE 市集端到端设计、生产并销售升级再造环保产品。</div>
+                </div>
+
                 <div class="tl-date-cell">Jul – Aug 2026</div>
                 <div class="tl-axis"><div class="tl-dot"></div></div>
                 <div class="tl-item">
@@ -712,18 +717,10 @@
                     <div class="tl-desc">早在品牌创立前，我就开始手工创作升级再造作品——包括塑料材质的各种设计。</div>
                 </div>
 
-                <div class="tl-date-cell">2025 – 至今</div>
-                <div class="tl-axis"><div class="tl-dot"></div></div>
-                <div class="tl-item">
-                    <div class="tl-org"><a href="https://sustainhk.my.canva.site/" target="_blank">"Sustain" — 个人品牌与绿色产品线</a></div>
-                    <div class="tl-role">创始人 · 10+ 手作环保产品</div>
-                    <div class="tl-desc">在 WISE 市集端到端设计、生产并销售升级再造环保产品。</div>
-                </div>
-
                 <div class="tl-date-cell">Middle school</div>
                 <div class="tl-axis"><div class="tl-dot"></div></div>
                 <div class="tl-item">
-                    <div class="tl-org">Headstart 中学环保社社长</div>
+                    <div class="tl-org"><a href="https://headstartphuket.com/en/our-school/" target="_blank">Headstart 中学环保社社长</a></div>
                     <div class="tl-role">海滩清理与海洋倡导</div>
                     <div class="tl-desc">每周海滩清理与海洋意识宣传——可持续习惯的起点。</div>
                 </div>
@@ -740,14 +737,6 @@
             <h2 class="section-title">我做过、研究过、交付过的事</h2>
             <p class="section-lead">联合国可持续发展目标是我选择下一步方向的记分卡——点击任一目标即可筛选出对应项目，也可以打开任何项目查看附实地照片的详细总览。</p>
 
-            <div class="research-block">
-                <div class="section-kicker">研究</div>
-                <h3 class="research-title">研究兴趣</h3>
-                <ul class="research-list">
-                    <li>整合碳通量建模、多相流模拟、AI 工具与数据驱动的可持续及气候风险评估——应用于 CCUS、氢能、绿色建筑设计以及低碳能源与开采系统，从实验室实验走向可规模化的净零解决方案。</li>
-                </ul>
-            </div>
-
             <div class="metrics">
                 <div class="metric"><div class="num">6</div><div class="label">直接推进的联合国 SDG 目标</div></div>
                 <div class="metric"><div class="num">300+</div><div class="label">带领的可持续发展协会会员</div></div>
@@ -760,37 +749,37 @@
                     <div class="sdg-badge"><span class="num">7</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>可负担的清洁能源</h4>
-                        <p>生命周期分析与排放仪表盘，加速向低碳电力转型。</p>
+                        <p>生命周期分析与排放看板，加速低碳电力转型。</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#DD1367;" onclick="filterBySDG(this,'sdg10');return false;">
                     <div class="sdg-badge"><span class="num">10</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>减少不平等</h4>
-                        <p>Path to Inclusion 让志愿活动向所有人开放——包括 SEN 学生。</p>
+                        <p>共融志愿活动向所有人开放——包括 SEN 学生。</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#FD9D24;" onclick="filterBySDG(this,'sdg11');return false;">
                     <div class="sdg-badge"><span class="num">11</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>可持续城市与社区</h4>
-                        <p>Access CityUHK 众包校园无障碍；GoatTech 试点城市碳创意。</p>
+                        <p>众包校园无障碍；GoatTech 城市碳创意试点。</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#BF8B2E;" onclick="filterBySDG(this,'sdg12');return false;">
                     <div class="sdg-badge"><span class="num">12</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>负责任消费</h4>
-                        <p>"Sustain" 系列把咖啡渣、纸张与玻璃变成可售的循环商品。</p>
+                        <p>"Sustain" 把咖啡渣、纸张与玻璃变成循环商品。</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#3F7E44;" onclick="filterBySDG(this,'sdg13');return false;">
                     <div class="sdg-badge"><span class="num">13</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>气候行动</h4>
-                        <p>西湖大学的碳通量 UCST 建模，量化我们必须清除的 CO₂。</p>
+                        <p>碳通量建模量化我们必须清除的 CO₂。</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#0A97D9;" onclick="filterBySDG(this,'sdg14');return false;">
                     <div class="sdg-badge"><span class="num">14</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>水下生物</h4>
-                        <p>从普吉岛海滩清理到离岸 LNG——海岸健康是我的主线。</p>
+                        <p>普吉岛海滩清理到离岸 LNG——海岸健康是我的主线。</p>
                     </div>
                 </div>
         </div>
@@ -1731,6 +1720,8 @@
                 const tags = (c.dataset.sdg || '').split(/\s+/);
                 c.style.display = tags.includes(tag) ? '' : 'none';
             });
+            const grid = document.getElementById('projGrid');
+            if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         // Scroll reveal

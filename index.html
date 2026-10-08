@@ -125,10 +125,6 @@
         }
         .hero .pitch { color:var(--muted); font-size:1.12rem; max-width:560px; margin-bottom:28px; line-height:1.65; }
         .hero-actions { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px; }
-        .research-block { margin:6px 0 30px; padding:20px 22px; background:var(--sage-soft); border:1px solid var(--border); border-radius:14px; }
-        .research-title { font-size:1.15rem; font-weight:700; color:var(--forest); margin:4px 0 12px; }
-        .research-list { margin:0; padding-left:20px; }
-        .research-list li { font-size:0.93rem; line-height:1.7; color:var(--ink); margin-bottom:6px; }
 
         .social-row { display:flex; gap:10px; flex-wrap:wrap; }
         .social-btn {
@@ -207,32 +203,33 @@
         .pillar p { color:var(--muted); font-size:0.93rem; }
 
         /* ============ SDG Alignment ============ */
-        .sdg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+        .sdg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
         @media (max-width:960px){ .sdg-grid{ grid-template-columns:repeat(2,1fr); } }
         @media (max-width:600px){ .sdg-grid{ grid-template-columns:1fr; } }
         .sdg-card {
             background:#fff; border:1px solid var(--border); border-radius:var(--radius);
-            padding:24px; display:flex; gap:16px; align-items:flex-start;
+            padding:12px 13px; display:flex; gap:10px; align-items:flex-start;
             transition:all .25s; position:relative; overflow:hidden;
         }
         .sdg-card::before {
-            content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--sdg-color,var(--emerald));
+            content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--sdg-color,var(--emerald));
         }
-        .sdg-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); }
+        .sdg-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
         .sdg-card { cursor:pointer; }
-        .sdg-card.active { outline:2px solid var(--emerald); outline-offset:2px; transform:translateY(-3px); box-shadow:var(--shadow-md); }
+        .sdg-card.active { outline:2px solid var(--emerald); outline-offset:2px; transform:translateY(-2px); box-shadow:var(--shadow-md); }
         .proj-card { scroll-margin-top:96px; }
-        .sdg-grid { margin-bottom:34px; }
+        #projGrid { scroll-margin-top:88px; }
+        .sdg-grid { margin-bottom:16px; }
         .sdg-badge {
-            flex-shrink:0; width:56px; height:56px; border-radius:10px;
+            flex-shrink:0; width:40px; height:40px; border-radius:8px;
             background:var(--sdg-color,var(--emerald)); color:#fff;
             display:flex; flex-direction:column; align-items:center; justify-content:center;
             font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; line-height:1;
         }
-        .sdg-badge .num { font-size:1.15rem; }
-        .sdg-badge .slash { font-size:0.6rem; opacity:0.8; font-weight:600; }
-        .sdg-card h4 { font-size:1rem; margin-bottom:6px; }
-        .sdg-card p { color:var(--muted); font-size:0.9rem; line-height:1.55; }
+        .sdg-badge .num { font-size:0.88rem; }
+        .sdg-badge .slash { font-size:0.52rem; opacity:0.8; font-weight:600; }
+        .sdg-card h4 { font-size:0.86rem; margin-bottom:3px; }
+        .sdg-card p { color:var(--muted); font-size:0.79rem; line-height:1.45; }
 
         /* ============ Impact metrics ============ */
         .metrics {
@@ -264,10 +261,10 @@
         /* ============ Projects ============ */
         .kw-row { display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 30px; }
         .kw { background:var(--sage-soft); color:var(--forest); border:1px solid var(--border); border-radius:999px; padding:7px 16px; font-size:0.88rem; font-weight:600; }
-        .kw-groups { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:8px 0 30px; }
-        .kw-group { background:var(--sage-soft); border:1px solid var(--border); border-radius:14px; padding:14px 16px; }
-        .kw-label { font-size:0.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--forest); opacity:.75; margin:0 0 10px; }
-        .kw-group .kw { display:inline-block; margin:3px 6px 3px 0; }
+        .kw-groups { display:grid; grid-template-columns:repeat(auto-fit,minmax(185px,1fr)); gap:10px; margin:8px 0 16px; }
+        .kw-group { background:var(--sage-soft); border:1px solid var(--border); border-radius:10px; padding:9px 11px; }
+        .kw-label { font-size:0.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--forest); opacity:.75; margin:0 0 5px; }
+        .kw-group .kw { display:inline-block; margin:2px 5px 2px 0; font-size:0.84rem; line-height:1.5; }
         .skill-table { width:100%; border-collapse:collapse; table-layout:fixed; background:var(--bg-card); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:var(--shadow-sm); }
         .skill-table th, .skill-table td { padding:16px; font-size:0.92rem; vertical-align:top; text-align:left; border-bottom:1px solid var(--border); }
         .skill-table thead th { background:var(--forest); color:#fff; font-weight:600; }
@@ -616,6 +613,14 @@
                     <div class="tl-desc">Open-to-all volunteering events co-designed with local secondary schools and SEN students.</div>
                 </div>
 
+                <div class="tl-date-cell">2025 – Now</div>
+                <div class="tl-axis"><div class="tl-dot"></div></div>
+                <div class="tl-item">
+                    <div class="tl-org"><a href="https://sustainhk.my.canva.site/" target="_blank">"Sustain" — personal brand &amp; green product line</a></div>
+                    <div class="tl-role">Founder · 10+ handcrafted eco products</div>
+                    <div class="tl-desc">Designed, produced and sold upcycled green products end-to-end at WISE Market.</div>
+                </div>
+
                 <div class="tl-date-cell">Jul – Aug 2026</div>
                 <div class="tl-axis"><div class="tl-dot"></div></div>
                 <div class="tl-item">
@@ -712,18 +717,10 @@
                     <div class="tl-desc">Started handcrafting upcycled creations — including plastic-based designs — long before the brand existed.</div>
                 </div>
 
-                <div class="tl-date-cell">2025 – Now</div>
-                <div class="tl-axis"><div class="tl-dot"></div></div>
-                <div class="tl-item">
-                    <div class="tl-org"><a href="https://sustainhk.my.canva.site/" target="_blank">"Sustain" — personal brand &amp; green product line</a></div>
-                    <div class="tl-role">Founder · 10+ handcrafted eco products</div>
-                    <div class="tl-desc">Designed, produced and sold upcycled green products end-to-end at WISE Market.</div>
-                </div>
-
                 <div class="tl-date-cell">Middle school</div>
                 <div class="tl-axis"><div class="tl-dot"></div></div>
                 <div class="tl-item">
-                    <div class="tl-org">Headstart School — Eco Club Leader</div>
+                    <div class="tl-org"><a href="https://headstartphuket.com/en/our-school/" target="_blank">Headstart School — Eco Club Leader</a></div>
                     <div class="tl-role">Beach clean-up &amp; ocean advocacy</div>
                     <div class="tl-desc">Weekly beach clean-ups and ocean awareness campaigns — where the sustainability habit began.</div>
                 </div>
@@ -740,14 +737,6 @@
             <h2 class="section-title">Things I've built, studied and shipped</h2>
             <p class="section-lead">The UN Sustainable Development Goals are the scorecard I use to choose what to work on next — click a goal to filter the projects behind it. Every project also opens a detailed overview with photos from the field.</p>
 
-            <div class="research-block">
-                <div class="section-kicker">Research</div>
-                <h3 class="research-title">Research Interests</h3>
-                <ul class="research-list">
-                    <li>Integrating carbon-flux modelling, multiphase-flow simulation, AI tooling and data-driven sustainability &amp; climate-risk assessment — applied to CCUS, hydrogen, green building design and low-carbon energy and extractive systems, from lab experiments to scalable net-zero solutions.</li>
-                </ul>
-            </div>
-
             <div class="metrics">
                 <div class="metric"><div class="num">6</div><div class="label">UN SDGs directly advanced</div></div>
                 <div class="metric"><div class="num">300+</div><div class="label">Sustainability club members led</div></div>
@@ -760,37 +749,37 @@
                     <div class="sdg-badge"><span class="num">7</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>Affordable &amp; Clean Energy</h4>
-                        <p>Lifecycle analysis and emission dashboards that accelerate the shift to low-carbon power.</p>
+                        <p>LCA and emission dashboards accelerating low-carbon power.</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#DD1367;" onclick="filterBySDG(this,'sdg10');return false;">
                     <div class="sdg-badge"><span class="num">10</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>Reduced Inequalities</h4>
-                        <p>Path to Inclusion opens volunteering to everyone — including SEN students.</p>
+                        <p>Inclusive volunteering open to everyone — including SEN students.</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#FD9D24;" onclick="filterBySDG(this,'sdg11');return false;">
                     <div class="sdg-badge"><span class="num">11</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>Sustainable Cities &amp; Communities</h4>
-                        <p>Access CityUHK crowdsources campus accessibility; GoatTech pilots urban carbon ideas.</p>
+                        <p>Crowdsourced campus accessibility; GoatTech urban-carbon pilots.</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#BF8B2E;" onclick="filterBySDG(this,'sdg12');return false;">
                     <div class="sdg-badge"><span class="num">12</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>Responsible Consumption</h4>
-                        <p>The "Sustain" line turns coffee grounds, paper and glass into saleable circular goods.</p>
+                        <p>"Sustain" turns coffee grounds, paper and glass into circular goods.</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#3F7E44;" onclick="filterBySDG(this,'sdg13');return false;">
                     <div class="sdg-badge"><span class="num">13</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>Climate Action</h4>
-                        <p>Carbon-Flux UCST modelling at Westlake quantifies the CO₂ we must draw down.</p>
+                        <p>Carbon-flux modelling quantifies the CO₂ we must draw down.</p>
                     </div>
                 </div><div class="sdg-card" style="--sdg-color:#0A97D9;" onclick="filterBySDG(this,'sdg14');return false;">
                     <div class="sdg-badge"><span class="num">14</span><span class="slash">SDG</span></div>
                     <div>
                         <h4>Life Below Water</h4>
-                        <p>From Phuket beach clean-ups to offshore LNG — coastal health is my throughline.</p>
+                        <p>Phuket beach clean-ups to offshore LNG — coastal health is my throughline.</p>
                     </div>
                 </div>
         </div>
@@ -1731,6 +1720,8 @@
                 const tags = (c.dataset.sdg || '').split(/\s+/);
                 c.style.display = tags.includes(tag) ? '' : 'none';
             });
+            const grid = document.getElementById('projGrid');
+            if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         // Scroll reveal
