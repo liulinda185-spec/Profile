@@ -125,6 +125,10 @@
         }
         .hero .pitch { color:var(--muted); font-size:1.12rem; max-width:560px; margin-bottom:28px; line-height:1.65; }
         .hero-actions { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px; }
+        .research-block { margin:6px 0 30px; padding:20px 22px; background:var(--sage-soft); border:1px solid var(--border); border-radius:14px; }
+        .research-title { font-size:1.15rem; font-weight:700; color:var(--forest); margin:4px 0 12px; }
+        .research-list { margin:0; padding-left:20px; }
+        .research-list li { font-size:0.93rem; line-height:1.7; color:var(--ink); margin-bottom:6px; }
 
         .social-row { display:flex; gap:10px; flex-wrap:wrap; }
         .social-btn {
@@ -264,12 +268,6 @@
         .kw-group { background:var(--sage-soft); border:1px solid var(--border); border-radius:14px; padding:14px 16px; }
         .kw-label { font-size:0.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--forest); opacity:.75; margin:0 0 10px; }
         .kw-group .kw { display:inline-block; margin:3px 6px 3px 0; }
-        .soft-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-bottom:34px; }
-        @media (max-width:1080px){ .soft-grid{ grid-template-columns:repeat(3,1fr); } }
-        @media (max-width:640px){ .soft-grid{ grid-template-columns:1fr; } }
-        .soft-card { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:20px 18px; box-shadow:var(--shadow-sm); }
-        .soft-card h4 { font-size:0.98rem; font-weight:700; color:var(--forest); margin:0 0 8px; }
-        .soft-card p { font-size:0.9rem; color:var(--muted); margin:0; line-height:1.55; }
         .skill-table { width:100%; border-collapse:collapse; table-layout:fixed; background:var(--bg-card); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:var(--shadow-sm); }
         .skill-table th, .skill-table td { padding:16px; font-size:0.92rem; vertical-align:top; text-align:left; border-bottom:1px solid var(--border); }
         .skill-table thead th { background:var(--forest); color:#fff; font-weight:600; }
@@ -293,7 +291,7 @@
         }
         .proj-card:hover { border-color:var(--leaf); box-shadow:var(--shadow-md); transform:translateY(-3px); }
         .proj-img { position:relative; overflow:hidden; background:var(--sage-soft); aspect-ratio:16/10; }
-        .proj-img img { width:100%; height:100%; object-fit:contain; display:block; transition:transform .4s; }
+        .proj-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s; }
         .proj-card:hover .proj-img img { transform:scale(1.04); }
         .proj-img.placeholder { display:flex; align-items:center; justify-content:center; color:#fff; font-size:2.6rem; }
         .proj-body { padding:22px 24px; flex:1; display:flex; flex-direction:column; }
@@ -549,10 +547,10 @@
             <a href="#top" class="brand">Liu Yingge (Linda)</a>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#documents">Documents</a></li>
                 </ul>
                 <div class="lang-switch">
@@ -572,9 +570,12 @@
                     <div class="eyebrow">Energy Science &amp; Engineering · CityUHK</div>
                     <h1>Building <span class="accent">sustainable solutions</span> for a greener tomorrow.</h1>
                     <p class="pitch">
-                        I'm <b>Liu Yingge (Linda)</b> — a final-year energy engineer, sustainability entrepreneur and storyteller working on eco-product design, hydrogen research and carbon utilisation. I turn the hard math of climate into technologies and stories people can believe in.
+                        I'm a final-year energy engineer at CityUHK who turns carbon problems into working systems — CLP Power intern who shipped enterprise AI agents and Power BI emission-tracking dashboards, co-author of an open-source carbon-flux model (SSRN 2026), and builder of three circular-economy ventures: SolarGrow, HydroFarm and Carbon Falcon. My work spans hydrogen, CCUS, green buildings and climate-risk frameworks (TCFD/ISSB/GRI) — from PEM-electrolysis methanol synthesis in my final-year project to a 300+ member sustainability club and HK Tech 300 semi-finals. A multilingual engineer-communicator bridging lab research, BIM modelling and public climate action — I build to restore the balance, because we don't have time.
                     </p>
-                    <p class="fyp-note"><i class="fa fa-microscope"></i> <b>Final-Year Project:</b> Load-Dependent PEM Electrolysis &amp; Domain-Constrained Optimisation of Solar-to-Methanol Production under Photovoltaic Intermittency</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="liu-yingge-cv.pdf" download><i class="fa fa-download"></i> Download CV (PDF)</a>
+                    </div>
+                    <p class="fyp-note"><i class="fa fa-microscope"></i> <b>Final-Year Project:</b> Solar-to-methanol production optimisation under PV intermittency (load-dependent PEM electrolysis)</p>
                 </div>
                 <div class="portrait-wrap">
                     <div class="portrait-sdg-frame">
@@ -590,35 +591,6 @@
             </div>
         </div>
     </header>
-
-    <!-- ============ ABOUT & PHILOSOPHY ============ -->
-    <section id="about">
-        <div class="container">
-            <div class="section-kicker">About</div>
-            <h2 class="section-title">How a yellow butterfly led me here</h2>
-            <div class="about-split">
-                <div>
-                    <p>I grew up inland, far from the ocean. The first time I swam in the sea — off a beach near Beijing, age eight — I walked out of the water, and a yellow butterfly settled lightly on my head. In that moment the ocean was boundless to me: beautiful, fragile, and full of life at once.</p>
-                    <p>I later moved to Phuket for middle school, where the sea was a five-minute walk away. I saw coral bleaching, plastic settling on tourist beaches no one cleaned, and coastlines eroding year after year. I started beach clean-ups, led the Eco club, and never really stopped. Now I study energy engineering in Hong Kong — another coastal city ringed by mangroves — turning that urgency into eco-product design, hydrogen research and carbon-utilisation systems, because the math is unforgiving: even if we stopped emitting tomorrow, the CO₂ already up there will keep warming the planet for decades. We cannot wait.</p>
-                    <blockquote class="pull">"The world is big, and personal power seems small — but I am still willing to be the one who strives."</blockquote>
-                </div>
-                <div class="about-photo">
-                    <img src="photo-linda.jpg" alt="CLP internship, Hong Kong">
-                    <div class="caption">Photo taken during the internship at CLP Power Hong Kong Limited.</div>
-                </div>
-            </div>
-
-            <div class="edu-strip">
-                <div>
-                    <div class="school">City University of Hong Kong</div>
-                    <div class="detail">BEng Energy Science &amp; Engineering · Sep 2023 – Jun 2027 (expected)</div>
-                </div>
-                <div class="detail">Key coursework: <b>Climate Change &amp; Adaptation (A+)</b>, <b>Project Management (A+)</b></div>
-                <div class="gpa">GPA 3.37 / 4.30</div>
-            </div>
-
-        </div>
-    </section>
 
     <!-- ============ EXPERIENCE TIMELINE ============ -->
     <section id="experience" class="alt">
@@ -644,20 +616,12 @@
                     <div class="tl-desc">Open-to-all volunteering events co-designed with local secondary schools and SEN students.</div>
                 </div>
 
-                <div class="tl-date-cell">2025 – Now</div>
-                <div class="tl-axis"><div class="tl-dot"></div></div>
-                <div class="tl-item">
-                    <div class="tl-org"><a href="https://sustainhk.my.canva.site/" target="_blank">"Sustain" — personal brand &amp; green product line</a></div>
-                    <div class="tl-role">Founder · 10+ handcrafted eco products</div>
-                    <div class="tl-desc">Designed, produced and sold upcycled green products end-to-end at WISE Market.</div>
-                </div>
-
                 <div class="tl-date-cell">Jul – Aug 2026</div>
                 <div class="tl-axis"><div class="tl-dot"></div></div>
                 <div class="tl-item">
                     <div class="tl-org"><a href="https://www.westlake.edu.cn/" target="_blank">Westlake University</a> — Summer Research Intern</div>
                     <div class="tl-role">Prof. Weicheng Cui · Carbon-Flux UCST model</div>
-                    <div class="tl-desc">Built conservation-constrained carbon-flux model in Python. Published in <i>Ecological Modelling</i> (Elsevier).</div>
+                    <div class="tl-desc">Built conservation-constrained carbon-flux model in Python. Posted on SSRN (2026); model code released publicly.</div>
                 </div>
 
                 <div class="tl-date-cell">Jun – Jul 2026</div>
@@ -748,6 +712,14 @@
                     <div class="tl-desc">Started handcrafting upcycled creations — including plastic-based designs — long before the brand existed.</div>
                 </div>
 
+                <div class="tl-date-cell">2025 – Now</div>
+                <div class="tl-axis"><div class="tl-dot"></div></div>
+                <div class="tl-item">
+                    <div class="tl-org"><a href="https://sustainhk.my.canva.site/" target="_blank">"Sustain" — personal brand &amp; green product line</a></div>
+                    <div class="tl-role">Founder · 10+ handcrafted eco products</div>
+                    <div class="tl-desc">Designed, produced and sold upcycled green products end-to-end at WISE Market.</div>
+                </div>
+
                 <div class="tl-date-cell">Middle school</div>
                 <div class="tl-axis"><div class="tl-dot"></div></div>
                 <div class="tl-item">
@@ -761,48 +733,20 @@
         </div>
     </section>
 
-    <!-- ============ SKILLS & KEYWORDS ============ -->
-    <section id="skills" class="alt">
-        <div class="container">
-            <div class="section-kicker">Skills &amp; Keywords</div>
-            <h2 class="section-title">What I bring to the table</h2>
-
-            <div class="kw-groups">
-                <div class="kw-group">
-                    <div class="kw-label">Languages</div>
-                    <span class="kw">Mandarin (native)</span><span class="kw">English — IELTS 7.0</span><span class="kw">Cantonese (proficient)</span><span class="kw">Thai (basic)</span><span class="kw">French (basic)</span>
-                </div>
-                <div class="kw-group">
-                    <div class="kw-label">AI &amp; Data</div>
-                    <span class="kw">Python</span><span class="kw">Power BI</span><span class="kw">Excel VBA &amp; Power Query</span><span class="kw">Copilot Studio AI agents</span><span class="kw">GenAI (Midjourney / ChatGPT / Stable Diffusion)</span><span class="kw">Origin Lab</span>
-                </div>
-                <div class="kw-group">
-                    <div class="kw-label">Design &amp; Modelling</div>
-                    <span class="kw">Revit / Dynamo / Navisworks</span><span class="kw">BIM</span><span class="kw">AutoCAD LT</span><span class="kw">Adobe Creative Suite</span><span class="kw">Product design &amp; upcycling</span><span class="kw">Video editing &amp; content design</span>
-                </div>
-                <div class="kw-group">
-                    <div class="kw-label">Research &amp; Sustainability</div>
-                    <span class="kw">GHG accounting</span><span class="kw">Climate risk assessment</span><span class="kw">Experimental design</span><span class="kw">Material characterisation</span><span class="kw">Literature review</span><span class="kw">Branding &amp; storytelling</span>
-                </div>
-            </div>
-
-            <div class="soft-grid">
-                <div class="soft-card"><h4>Ownership</h4><p>Lead projects end-to-end — from product concept to on-site sales at WISE Market, from pitch deck to HK Tech 300 semi-finals.</p></div>
-                <div class="soft-card"><h4>Resourceful</h4><p>Self-taught across domains: Python, Power BI, Revit, video editing and content design — learning exactly what each project demands.</p></div>
-                <div class="soft-card"><h4>Influential</h4><p>Built and led a 300+ member club; reached 700+ audiences with eco-content across platforms; chaired 10+ SDG events.</p></div>
-                <div class="soft-card"><h4>Strategic</h4><p>TAM/SAM/SOM market sizing, SDG-aligned planning and data-driven decision-making on every project I run.</p></div>
-                <div class="soft-card"><h4>Risk-Aware</h4><p>One-year internship risk registers and contract management; energy audits that find waste before it becomes cost.</p></div>
-            </div>
-
-        </div>
-    </section>
-
     <!-- ============ PROJECTS & SDG ALIGNMENT ============ -->
     <section id="projects">
         <div class="container">
             <div class="section-kicker">Projects</div>
             <h2 class="section-title">Things I've built, studied and shipped</h2>
             <p class="section-lead">The UN Sustainable Development Goals are the scorecard I use to choose what to work on next — click a goal to filter the projects behind it. Every project also opens a detailed overview with photos from the field.</p>
+
+            <div class="research-block">
+                <div class="section-kicker">Research</div>
+                <h3 class="research-title">Research Interests</h3>
+                <ul class="research-list">
+                    <li>Integrating carbon-flux modelling, multiphase-flow simulation, AI tooling and data-driven sustainability &amp; climate-risk assessment — applied to CCUS, hydrogen, green building design and low-carbon energy and extractive systems, from lab experiments to scalable net-zero solutions.</li>
+                </ul>
+            </div>
 
             <div class="metrics">
                 <div class="metric"><div class="num">6</div><div class="label">UN SDGs directly advanced</div></div>
@@ -863,7 +807,7 @@
                         <h4>Carbon-Flux UCST Modelling Framework</h4>
                         <p>Independent research under Prof. Weicheng Cui at Westlake University. Built a carbon-ecological model in Python integrating carbon fluxes across ecological scales under a conservation-constrained Unified Complex System Theory.</p>
                         <div class="abstract-box">
-                            <div class="abstract-label">Published · Ecological Modelling, Elsevier</div>
+                            <div class="abstract-label">Posted on SSRN (2026) · Open-source code</div>
                             <div class="abstract-title">"Integrating Carbon Fluxes Across Ecological Scales: A Conservation-Constrained UCST Modelling Framework"</div>
                         </div>
                         <div class="proj-links">
@@ -932,15 +876,15 @@
 
 <!-- Access CityUHK -->
                 <div class="proj-card" data-sdg="sdg11 sdg10">
-                    <div class="proj-img placeholder cover-access"><i class="fa fa-wheelchair"></i></div>
+                    <div class="proj-img"><img src="access-cityu-hk-cover.jpg" alt="Access CityUHK proposal deck cover"></div>
                     <div class="proj-body">
                         <div class="proj-tags">
-                            <span class="proj-tag">Ongoing · LEAD Scheme</span>
+                            <span class="proj-tag">CityUHK LEAD · HK$100k Grant</span>
                             <span class="sdg-pill" style="background:#DD1367;">SDG 10</span>
                             <span class="sdg-pill" style="background:#FD9D24;">SDG 11</span>
                         </div>
                         <h4>Access CityUHK — Crowdsourced Accessibility Platform</h4>
-                        <p>On-campus LEAD Scheme project. Building a crowdsourced platform that turns every student into an accessibility auditor: QR-tagged campus assets, sub-30s mobile reporting, Power BI dashboards for FMO, and AI predictive maintenance.</p>
+                        <p>Funded by CityUHK's LEAD Scheme — a HK$100,000 grant investing in student-led projects. Building a crowdsourced platform that turns every student into an accessibility auditor: QR-tagged campus assets, sub-30s mobile reporting, Power BI dashboards for FMO, and AI predictive maintenance.</p>
                         <div class="proj-links">
                             <a href="#" onclick="openProjectModal('access');return false;"><i class="fa fa-expand"></i> Overview</a>
                             <a href="access-cityu-hk.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Proposal deck</a>
@@ -1002,7 +946,7 @@
 
 <!-- Beach clean-ups / high school -->
                 <div class="proj-card" data-sdg="sdg14">
-                    <div class="proj-img"><img src="eco-club-2.jpg" alt="Beach clean-up with the eco club"></div>
+                    <div class="proj-img"><img src="eco-club-2.jpg" alt="Beach clean-up with Sustainable Maikhao Foundation, Phuket"></div>
                     <div class="proj-body">
                         <div class="proj-tags">
                             <span class="proj-tag">Where it started</span>
@@ -1020,6 +964,75 @@
         </div>
     </section>
 
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="alt">
+        <div class="container">
+            <div class="section-kicker">Skills</div>
+            <h2 class="section-title">Skills</h2>
+
+            <div class="kw-groups">
+                <div class="kw-group">
+                    <div class="kw-label">Languages</div>
+                    <span class="kw">Mandarin — Native</span><span class="kw">English — IELTS 7.0, professional working proficiency</span><span class="kw">Cantonese — Fluent</span><span class="kw">Thai — Basic</span><span class="kw">French — Basic</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">AI, Data &amp; Digitalisation</div>
+                    <span class="kw">Python</span><span class="kw">Power BI</span><span class="kw">Advanced Excel (VBA, Power Query)</span><span class="kw">Microsoft Copilot Studio &amp; AI Agents</span><span class="kw">Power Apps &amp; Power Automate</span><span class="kw">Dataverse &amp; RAG Knowledge Bases</span><span class="kw">Prompt Engineering</span><span class="kw">SQL (Introductory)</span><span class="kw">Generative AI — ChatGPT, Midjourney, Stable Diffusion</span><span class="kw">OriginLab</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">Engineering, BIM &amp; Digital Modelling</div>
+                    <span class="kw">Revit</span><span class="kw">Dynamo</span><span class="kw">Navisworks</span><span class="kw">AutoCAD / AutoCAD LT</span><span class="kw">Civil 3D</span><span class="kw">Fusion 360</span><span class="kw">ANSYS Fluent</span><span class="kw">OpenFOAM</span><span class="kw">COMSOL</span><span class="kw">Aspen Plus</span><span class="kw">BIM &amp; Asset Information Management</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">Sustainability, Climate &amp; Energy</div>
+                    <span class="kw">GHG Accounting &amp; Carbon Footprinting</span><span class="kw">Life Cycle Assessment (LCA)</span><span class="kw">Climate-Risk Assessment — physical &amp; transitional risk</span><span class="kw">TCFD / ISSB / GRI / CDP</span><span class="kw">NGFS / IEA Scenario Analysis</span><span class="kw">CCUS</span><span class="kw">Hydrogen &amp; Low-Carbon Energy Pathways</span><span class="kw">Circular Economy &amp; Resource Recovery</span><span class="kw">Sustainable Energy Systems</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">Research &amp; Technical Analysis</div>
+                    <span class="kw">Experimental Design</span><span class="kw">Material Characterisation</span><span class="kw">Statistical Analysis</span><span class="kw">Literature Review &amp; Evidence Synthesis</span><span class="kw">Technical Research &amp; Reporting</span><span class="kw">Thermal-Fluid Analysis</span><span class="kw">Multiphase-Flow Systems</span><span class="kw">Carbon &amp; Ecological Modelling</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">Project, Risk &amp; Governance</div>
+                    <span class="kw">Project Management</span><span class="kw">Risk-Register Development &amp; PESTLE Analysis</span><span class="kw">Project Assurance &amp; Stage-Gate Review</span><span class="kw">FEED &amp; Technical Document Review</span><span class="kw">NEC4 Contract Documentation</span><span class="kw">QA/QC</span><span class="kw">WBS &amp; Project Controls</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">Design, Communication &amp; Creative</div>
+                    <span class="kw">Adobe Creative Suite — Photoshop, Illustrator, InDesign, Premiere Pro</span><span class="kw">Technical &amp; Creative Writing</span><span class="kw">Video Editing</span><span class="kw">UX/UI Design</span><span class="kw">Product Design &amp; Upcycling</span><span class="kw">Branding &amp; Visual Storytelling</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ ABOUT & PHILOSOPHY ============ -->
+    <section id="about">
+        <div class="container">
+            <div class="section-kicker">About</div>
+            <h2 class="section-title">How a yellow butterfly led me here</h2>
+            <div class="about-split">
+                <div>
+                    <p>I grew up inland, far from the ocean. The first time I swam in the sea — off a beach near Beijing, age eight — I walked out of the water, and a yellow butterfly settled lightly on my head. In that moment the ocean was boundless to me: beautiful, fragile, and full of life at once.</p>
+                    <p>I later moved to Phuket for middle school, five minutes from the sea — coral bleaching, plastic on the beaches, eroding coastlines. I started beach clean-ups, led the Eco club, and never stopped. That habit became my career: at CLP Power I built emission-tracking Power BI dashboards and a RAG AI agent (document-matching accuracy from 33% to 66%); at Westlake I co-authored a UCST carbon-flux framework, posted on SSRN (2026); my team reached the HK Tech 300 semi-finals.</p>
+                    <blockquote class="pull">"We are the world's creators — and its destroyers. That is not the world I have in mind, and we don't have time."</blockquote>
+                </div>
+                <div class="about-photo">
+                    <img src="photo-linda.jpg" alt="CLP internship, Hong Kong">
+                    <div class="caption">At the LNG terminal during my CLP Power internship.</div>
+                </div>
+            </div>
+
+            <div class="edu-strip">
+                <div>
+                    <div class="school">City University of Hong Kong</div>
+                    <div class="detail">BEng Energy Science &amp; Engineering · Sep 2023 – Jun 2027 (expected)</div>
+                </div>
+                <div class="detail">Key coursework: <b>Climate Change &amp; Adaptation (A+)</b>, <b>Project Management (A+)</b>, <b>Sustainable &amp; Renewable Energy (A)</b></div>
+                <div class="gpa">GPA 3.37 / 4.30</div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- ============ DOCUMENTS & CERTIFICATIONS ============ -->
     <section id="documents">
         <div class="container">
@@ -1029,6 +1042,11 @@
             <table class="cert-table">
                 <thead><tr><th>Item</th><th>Details</th><th>Year</th></tr></thead>
                 <tbody>
+        <tr data-hcat="certs">
+            <td class="cert-name">Curriculum Vitae</td>
+            <td class="cert-details"><a href="liu-yingge-cv.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Liu Yingge — CV (PDF)</a></td>
+            <td class="cert-year">2026</td>
+        </tr>
         <tr data-hcat="certs">
             <td class="cert-name">Mental Health First Aid (MHFA) Certification</td>
             <td class="cert-details"><a href="mental-health-first-aid-cert.jpg" target="_blank"><i class="fa fa-file-image-o"></i> Certificate</a> · 12-hour MHFA Standard Course · issued by The Mental Health Association of Hong Kong, authorised by Mental Health First Aid International (Australia)</td>
@@ -1053,11 +1071,6 @@
             <td class="cert-name">Half Marathon Finisher</td>
             <td class="cert-details"><a href="marathons-cert.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Certificate</a> · <a href="half-marathon.jpg" target="_blank"><i class="fa fa-file-image-o"></i> Finish photo</a> · <a href="charity-run.jpg" target="_blank"><i class="fa fa-file-image-o"></i> Charity run</a> · <a href="running.jpg" target="_blank"><i class="fa fa-file-image-o"></i> Race day</a> · <a href="charity-run-past.jpg" target="_blank"><i class="fa fa-file-image-o"></i> Charity run (past)</a></td>
             <td class="cert-year">2026</td>
-        </tr>
-        <tr data-hcat="certs">
-            <td class="cert-name">Karate — Ongoing Practice</td>
-            <td class="cert-details"><a href="karate.png" target="_blank"><i class="fa fa-file-image-o"></i> Training photo</a> · Practising karate since 2025 — discipline, fitness and focus through regular training</td>
-            <td class="cert-year">2025 – Now</td>
         </tr>
         <tr data-hcat="certs">
             <td class="cert-name">CityUHK Sustainability Club Chairperson</td>
@@ -1245,7 +1258,7 @@
         "bullets": [
             "Reviewed 20+ recent publications and synthesised research gaps; presented weekly progress reports.",
             "Processed datasets in Python with statistical analysis to identify key performance trends.",
-            "Co-author of “Integrating Carbon Fluxes Across Ecological Scales: A Conservation-Constrained UCST Modelling Framework”, under preparation for Ecological Modelling (Elsevier).",
+            "Co-author of “Integrating Carbon Fluxes Across Ecological Scales: A Conservation-Constrained UCST Modelling Framework”, posted on SSRN (2026), with the underlying model code released publicly.",
             "<a href=\"https://github.com/cuiweicheng1963/liu-cui\" target=\"_blank\">Code on GitHub</a> · <a href=\"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7417192\" target=\"_blank\">Read on SSRN</a> · <a href=\"https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5288683\" target=\"_blank\">SSRN author page</a>"
         ],
         "photos": [
@@ -1313,28 +1326,28 @@
                 "caption": "Market products"
             },
             {
-                "src": "sustain-coffee-stones.jpg",
-                "caption": "Coffee-ground diffusive stones"
-            },
-            {
                 "src": "sustain-seed-paper-frames.jpg",
-                "caption": "Framed plantable seed paper"
+                "caption": "Upcycled craft pieces"
             },
             {
                 "src": "sustain-bodhi-bracelets.jpg",
-                "caption": "Bodhi-seed blessing bracelets"
+                "caption": "Bodhi-seed bracelets at WISE Market"
             },
             {
                 "src": "sustain-hand-stamps.jpg",
-                "caption": "Hand-carved custom stamps"
-            },
-            {
-                "src": "sustain-botanical-tiles.jpg",
-                "caption": "Botanical coffee-ground tiles"
+                "caption": "Hand-carved seal & rubbing art"
             },
             {
                 "src": "sustain-market-stall.jpg",
-                "caption": "WISE Market stall display"
+                "caption": "Scratch-art on upcycled boards"
+            },
+            {
+                "src": "sustain-botanical-tiles.jpg",
+                "caption": "Coffee-ground soap & dried-flower ornaments"
+            },
+            {
+                "src": "sustain-coffee-stones.jpg",
+                "caption": "Coffee-ground diffuser stones"
             }
         ]
     },
@@ -1462,26 +1475,24 @@
                 "src": "clp-4.jpg",
                 "caption": "CLP visit — safety video session"
             },
-            {
-                "src": "hike.jpg",
-                "caption": "Lion Rock hike & clean"
-            },
-            {
-                "src": "hike-2.jpg",
-                "caption": "Coastal trail hike"
-            }
         ]
     },
     "access": {
         "title": "Access CityUHK — Crowdsourced Accessibility Platform",
-        "org": "LEAD Scheme · On-campus, ongoing",
+        "org": "CityUHK LEAD Scheme · HK$100,000 grant, ongoing",
         "year": "2025 – Present",
         "summary": "A crowdsourced platform that turns every student into an accessibility auditor: QR-tagged campus assets, sub-30-second mobile reporting, Power BI dashboards for FMO and AI predictive maintenance.",
         "bullets": [
-            "Ongoing on-campus project at City University of Hong Kong.",
+            "Funded by CityUHK's LEAD Scheme — a HK$100,000 programme that invests in student-led campus projects.",
+            "Building a crowdsourced platform that turns every student into an accessibility auditor: QR-tagged campus assets, sub-30-second mobile reporting, Power BI dashboards for FMO and AI predictive maintenance.",
             "Proposal deck: <a href=\"access-cityu-hk.pdf\" target=\"_blank\">Access CityUHK.pdf</a>"
         ],
-        "photos": []
+        "photos": [
+            {
+                "src": "access-cityu-hk-cover.jpg",
+                "caption": "Access CityUHK proposal deck cover"
+            }
+        ]
     },
     "goattech": {
         "title": "GoatTech — SolarGrow, HydroFarm & Carbon Falcon",
@@ -1512,36 +1523,44 @@
         ],
         "photos": [
             {
-                "src": "highschool-ecodesign.png",
-                "caption": "Eco design project"
+                "src": "eco-club-2.jpg",
+                "caption": "Beach clean-up with Sustainable Maikhao Foundation"
             },
             {
                 "src": "ecoclub.jpg",
                 "caption": "Eco club beach clean-up"
             },
             {
-                "src": "eco-club-1.jpg",
-                "caption": "Eco club team"
-            },
-            {
-                "src": "eco-club-2.jpg",
-                "caption": "Beach clean-up haul"
-            },
-            {
                 "src": "past-1.jpg",
                 "caption": "Beach clean-up day"
             },
             {
-                "src": "past-2.jpg",
-                "caption": "Beach painting (personal art)"
+                "src": "highschool-ecodesign.png",
+                "caption": "Eco design project"
+            },
+            {
+                "src": "high-school-hike.jpg",
+                "caption": "Mountain hike, high school"
+            },
+            {
+                "src": "high-school-hike-2.jpg",
+                "caption": "Coastal hike, high school"
             },
             {
                 "src": "me-past.jpg",
-                "caption": "Sailing in Phuket"
+                "caption": "Sailing off Phuket"
             },
             {
-                "src": "me-past-highschool.png",
-                "caption": "HeadStart graduation"
+                "src": "upcycling-past-1.jpg",
+                "caption": "Plastic-bottle craft workshop"
+            },
+            {
+                "src": "upcycling-past-2.jpg",
+                "caption": "Upcycled mini Christmas trees"
+            },
+            {
+                "src": "upcycling-past-3.jpg",
+                "caption": "Teaching plastic crafts"
             },
             {
                 "src": "upcycling.jpg",
@@ -1578,14 +1597,6 @@
             {
                 "src": "upcycling-plastic-3.jpg",
                 "caption": "Upcycled tree decoration"
-            },
-            {
-                "src": "upcycling-plastic-4.jpg",
-                "caption": "Hanging recycled-plastic blocks"
-            },
-            {
-                "src": "upcycling-plastic-5.jpg",
-                "caption": "Recycled-plastic art piece"
             },
             {
                 "src": "upcycling.png",

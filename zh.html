@@ -125,6 +125,10 @@
         }
         .hero .pitch { color:var(--muted); font-size:1.12rem; max-width:560px; margin-bottom:28px; line-height:1.65; }
         .hero-actions { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px; }
+        .research-block { margin:6px 0 30px; padding:20px 22px; background:var(--sage-soft); border:1px solid var(--border); border-radius:14px; }
+        .research-title { font-size:1.15rem; font-weight:700; color:var(--forest); margin:4px 0 12px; }
+        .research-list { margin:0; padding-left:20px; }
+        .research-list li { font-size:0.93rem; line-height:1.7; color:var(--ink); margin-bottom:6px; }
 
         .social-row { display:flex; gap:10px; flex-wrap:wrap; }
         .social-btn {
@@ -264,12 +268,6 @@
         .kw-group { background:var(--sage-soft); border:1px solid var(--border); border-radius:14px; padding:14px 16px; }
         .kw-label { font-size:0.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--forest); opacity:.75; margin:0 0 10px; }
         .kw-group .kw { display:inline-block; margin:3px 6px 3px 0; }
-        .soft-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-bottom:34px; }
-        @media (max-width:1080px){ .soft-grid{ grid-template-columns:repeat(3,1fr); } }
-        @media (max-width:640px){ .soft-grid{ grid-template-columns:1fr; } }
-        .soft-card { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:20px 18px; box-shadow:var(--shadow-sm); }
-        .soft-card h4 { font-size:0.98rem; font-weight:700; color:var(--forest); margin:0 0 8px; }
-        .soft-card p { font-size:0.9rem; color:var(--muted); margin:0; line-height:1.55; }
         .skill-table { width:100%; border-collapse:collapse; table-layout:fixed; background:var(--bg-card); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:var(--shadow-sm); }
         .skill-table th, .skill-table td { padding:16px; font-size:0.92rem; vertical-align:top; text-align:left; border-bottom:1px solid var(--border); }
         .skill-table thead th { background:var(--forest); color:#fff; font-weight:600; }
@@ -293,7 +291,7 @@
         }
         .proj-card:hover { border-color:var(--leaf); box-shadow:var(--shadow-md); transform:translateY(-3px); }
         .proj-img { position:relative; overflow:hidden; background:var(--sage-soft); aspect-ratio:16/10; }
-        .proj-img img { width:100%; height:100%; object-fit:contain; display:block; transition:transform .4s; }
+        .proj-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s; }
         .proj-card:hover .proj-img img { transform:scale(1.04); }
         .proj-img.placeholder { display:flex; align-items:center; justify-content:center; color:#fff; font-size:2.6rem; }
         .proj-body { padding:22px 24px; flex:1; display:flex; flex-direction:column; }
@@ -549,10 +547,10 @@
             <a href="#top" class="brand">刘迎格（Linda）</a>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="#about">关于我</a></li>
                     <li><a href="#experience">经历</a></li>
-                    <li><a href="#skills">技能</a></li>
                     <li><a href="#projects">项目</a></li>
+                    <li><a href="#skills">技能</a></li>
+                    <li><a href="#about">关于我</a></li>
                     <li><a href="#documents">文档</a></li>
                 </ul>
                 <div class="lang-switch">
@@ -572,9 +570,12 @@
                     <div class="eyebrow">能源科学及工程 · 香港城市大学</div>
                     <h1>构建<span class="accent">可持续解决方案</span>，共创绿色未来。</h1>
                     <p class="pitch">
-                        我是<b>刘迎格（Linda）</b>，一名应届能源工程师、可持续发展创业者与写作者，专注环保产品设计、氢能与碳利用研究。我把气候的硬核数学，转化为人们可以相信的技术与故事。
+                        我是香港城市大学能源工程应届生，习惯把碳问题变成能跑的系统——在中电（CLP Power）交付过企业级 AI 智能体与 Power BI 排放追踪看板，合著了开源碳通量模型（UCST，SSRN 2026），并创办了 SolarGrow、HydroFarm、Carbon Falcon 三个循环经济项目。我的研究横跨氢能、CCUS、绿色建筑与气候风险框架（TCFD/ISSB/GRI）——从 PEM 电解制甲醇的毕业设计，到带领 300+ 人可持续发展社团打进 HK Tech 300 半决赛。作为多语言工程师兼传播者，我连接实验室、BIM 建模与公众气候行动——重建平衡，因为我们没有时间。
                     </p>
-                    <p class="fyp-note"><i class="fa fa-microscope"></i> <b>毕业设计：</b>光伏间歇性下负载相关 PEM 电解与太阳能制甲醇的域约束优化（Load-Dependent PEM Electrolysis and Domain-Constrained Optimisation of Solar-to-Methanol Production under Photovoltaic Intermittency）</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="liu-yingge-cv.pdf" download><i class="fa fa-download"></i> 下载简历（PDF）</a>
+                    </div>
+                    <p class="fyp-note"><i class="fa fa-microscope"></i> <b>毕业设计：</b>光伏间歇性下太阳能制甲醇生产优化（负载相关 PEM 电解）</p>
                 </div>
                 <div class="portrait-wrap">
                     <div class="portrait-sdg-frame">
@@ -590,35 +591,6 @@
             </div>
         </div>
     </header>
-
-    <!-- ============ ABOUT & PHILOSOPHY ============ -->
-    <section id="about">
-        <div class="container">
-            <div class="section-kicker">关于我</div>
-            <h2 class="section-title">一只黄蝴蝶，如何带我走到今天</h2>
-            <div class="about-split">
-                <div>
-                    <p>我在内陆长大，离海很远。第一次下海游泳是在北京附近的海滩，那年八岁——我走出水面时，一只黄蝴蝶轻轻落在我头上。那一刻，大海对我而言是无边无际的：美丽、脆弱，又充满生机。</p>
-                    <p>后来我去普吉岛上中学，海边走路五分钟就到。我亲眼看见珊瑚白化、塑料堆积在无人清理的沙滩上、海岸线年复一年被侵蚀。我开始组织海滩清理、领导环保社，从此再没停下。现在我在香港读能源工程——又一座被红树林环绕的海滨城市——把这份紧迫感转化为环保产品设计、氢能与碳利用系统，因为数学是无情的：即使我们明天就停止排放，已经在大气中的 CO₂ 仍会让地球变暖数十年。我们等不起。</p>
-                    <blockquote class="pull">「世界很大，个人的力量看似渺小——但我仍愿做那个奋力前行的人。」</blockquote>
-                </div>
-                <div class="about-photo">
-                    <img src="photo-linda.jpg" alt="中电实习，香港">
-                    <div class="caption">在中华电力香港有限公司实习期间拍摄的照片。</div>
-                </div>
-            </div>
-
-            <div class="edu-strip">
-                <div>
-                    <div class="school">香港城市大学</div>
-                    <div class="detail">能源科学及工程工学学士 · 2023年9月 – 2027年6月（预计）</div>
-                </div>
-                <div class="detail">核心课程： <b>气候变化与适应 (A+)</b>, <b>项目管理 (A+)</b></div>
-                <div class="gpa">GPA 3.37 / 4.30</div>
-            </div>
-
-        </div>
-    </section>
 
     <!-- ============ EXPERIENCE TIMELINE ============ -->
     <section id="experience" class="alt">
@@ -644,20 +616,12 @@
                     <div class="tl-desc">与本地中学及 SEN 学生共同设计、向所有人开放的志愿活动。</div>
                 </div>
 
-                <div class="tl-date-cell">2025 – 至今</div>
-                <div class="tl-axis"><div class="tl-dot"></div></div>
-                <div class="tl-item">
-                    <div class="tl-org"><a href="https://sustainhk.my.canva.site/" target="_blank">"Sustain" — 个人品牌与绿色产品线</a></div>
-                    <div class="tl-role">创始人 · 10+ 手作环保产品</div>
-                    <div class="tl-desc">在 WISE 市集端到端设计、生产并销售升级再造环保产品。</div>
-                </div>
-
                 <div class="tl-date-cell">Jul – Aug 2026</div>
                 <div class="tl-axis"><div class="tl-dot"></div></div>
                 <div class="tl-item">
                     <div class="tl-org"><a href="https://www.westlake.edu.cn/" target="_blank">西湖大学</a> — 暑期科研实习生</div>
                     <div class="tl-role">崔维成教授 · 碳通量 UCST 模型</div>
-                    <div class="tl-desc">用 Python 构建守恒约束的碳通量模型。成果发表于 <i>Ecological Modelling</i>（Elsevier）。</div>
+                    <div class="tl-desc">用 Python 构建守恒约束的碳通量模型。成果发布于 SSRN（2026），底层模型代码已公开。</div>
                 </div>
 
                 <div class="tl-date-cell">Jun – Jul 2026</div>
@@ -748,6 +712,14 @@
                     <div class="tl-desc">早在品牌创立前，我就开始手工创作升级再造作品——包括塑料材质的各种设计。</div>
                 </div>
 
+                <div class="tl-date-cell">2025 – 至今</div>
+                <div class="tl-axis"><div class="tl-dot"></div></div>
+                <div class="tl-item">
+                    <div class="tl-org"><a href="https://sustainhk.my.canva.site/" target="_blank">"Sustain" — 个人品牌与绿色产品线</a></div>
+                    <div class="tl-role">创始人 · 10+ 手作环保产品</div>
+                    <div class="tl-desc">在 WISE 市集端到端设计、生产并销售升级再造环保产品。</div>
+                </div>
+
                 <div class="tl-date-cell">Middle school</div>
                 <div class="tl-axis"><div class="tl-dot"></div></div>
                 <div class="tl-item">
@@ -761,48 +733,20 @@
         </div>
     </section>
 
-    <!-- ============ 技能与关键词 ============ -->
-    <section id="skills" class="alt">
-        <div class="container">
-            <div class="section-kicker">技能与关键词</div>
-            <h2 class="section-title">我能带来什么</h2>
-
-            <div class="kw-groups">
-                <div class="kw-group">
-                    <div class="kw-label">语言</div>
-                    <span class="kw">普通话（母语）</span><span class="kw">英语 — IELTS 7.0</span><span class="kw">粤语（流利）</span><span class="kw">泰语（基础）</span><span class="kw">法语（基础）</span>
-                </div>
-                <div class="kw-group">
-                    <div class="kw-label">AI 与数据</div>
-                    <span class="kw">Python</span><span class="kw">Power BI</span><span class="kw">Excel VBA &amp; Power Query</span><span class="kw">Copilot Studio AI 智能体</span><span class="kw">GenAI（Midjourney / ChatGPT / Stable Diffusion）</span><span class="kw">Origin Lab</span>
-                </div>
-                <div class="kw-group">
-                    <div class="kw-label">设计与建模</div>
-                    <span class="kw">Revit / Dynamo / Navisworks</span><span class="kw">BIM</span><span class="kw">AutoCAD LT</span><span class="kw">Adobe Creative Suite</span><span class="kw">产品设计与升级再造</span><span class="kw">视频剪辑与内容设计</span>
-                </div>
-                <div class="kw-group">
-                    <div class="kw-label">研究与可持续</div>
-                    <span class="kw">GHG 核算</span><span class="kw">气候风险评估</span><span class="kw">实验设计</span><span class="kw">材料表征</span><span class="kw">文献综述</span><span class="kw">品牌与叙事</span>
-                </div>
-            </div>
-
-            <div class="soft-grid">
-                <div class="soft-card"><h4>主人翁精神 · Ownership</h4><p>端到端负责每个项目——从产品概念到 WISE 市集现场销售，从路演 PPT 到 HK Tech 300 半决赛。</p></div>
-                <div class="soft-card"><h4>应变力 · Resourceful</h4><p>跨领域自学者：Python、Power BI、Revit、视频剪辑与内容设计——项目需要什么就学什么。</p></div>
-                <div class="soft-card"><h4>影响力 · Influential</h4><p>创建并带领 300+ 会员的可持续发展社团；环保内容触达 700+ 受众；主持 10+ 场 SDG 活动。</p></div>
-                <div class="soft-card"><h4>战略思维 · Strategic</h4><p>以 TAM/SAM/SOM 市场规模测算、SDG 对齐规划与数据驱动决策贯穿每个项目。</p></div>
-                <div class="soft-card"><h4>风险意识 · Risk-Aware</h4><p>一年实习中管理风险登记册与合同流程；能源审计在浪费变成成本之前发现它。</p></div>
-            </div>
-
-        </div>
-    </section>
-
     <!-- ============ PROJECTS & SDG ALIGNMENT ============ -->
     <section id="projects">
         <div class="container">
             <div class="section-kicker">项目</div>
             <h2 class="section-title">我做过、研究过、交付过的事</h2>
             <p class="section-lead">联合国可持续发展目标是我选择下一步方向的记分卡——点击任一目标即可筛选出对应项目，也可以打开任何项目查看附实地照片的详细总览。</p>
+
+            <div class="research-block">
+                <div class="section-kicker">研究</div>
+                <h3 class="research-title">研究兴趣</h3>
+                <ul class="research-list">
+                    <li>整合碳通量建模、多相流模拟、AI 工具与数据驱动的可持续及气候风险评估——应用于 CCUS、氢能、绿色建筑设计以及低碳能源与开采系统，从实验室实验走向可规模化的净零解决方案。</li>
+                </ul>
+            </div>
 
             <div class="metrics">
                 <div class="metric"><div class="num">6</div><div class="label">直接推进的联合国 SDG 目标</div></div>
@@ -863,7 +807,7 @@
                         <h4>Carbon-Flux UCST Modelling Framework</h4>
                         <p>在西湖大学崔维成教授指导下独立开展研究。用 Python 构建碳生态模型，在守恒约束的统一复杂系统理论下跨生态尺度整合碳通量。</p>
                         <div class="abstract-box">
-                            <div class="abstract-label">已发表 · Ecological Modelling，Elsevier</div>
+                            <div class="abstract-label">发布于 SSRN（2026）· 开源代码</div>
                             <div class="abstract-title">"整合跨生态尺度的碳通量：一个守恒约束的 UCST 建模框架"</div>
                         </div>
                         <div class="proj-links">
@@ -932,15 +876,15 @@
 
 <!-- Access CityUHK -->
                 <div class="proj-card" data-sdg="sdg11 sdg10">
-                    <div class="proj-img placeholder cover-access"><i class="fa fa-wheelchair"></i></div>
+                    <div class="proj-img"><img src="access-cityu-hk-cover.jpg" alt="Access CityUHK 提案封面"></div>
                     <div class="proj-body">
                         <div class="proj-tags">
-                            <span class="proj-tag">进行中 · LEAD 计划</span>
+                            <span class="proj-tag">城大 LEAD · 十万元资助</span>
                             <span class="sdg-pill" style="background:#DD1367;">SDG 10</span>
                             <span class="sdg-pill" style="background:#FD9D24;">SDG 11</span>
                         </div>
                         <h4>Access CityUHK — 众包无障碍平台</h4>
-                        <p>校园 LEAD 计划项目。构建众包平台，让每位学生都成为无障碍审计员：QR 标签校园设施、30 秒内移动端上报、FMO 用 Power BI 仪表盘、AI 预测性维护。</p>
+                        <p>获城大 LEAD 计划十万元资助——该计划投资学生团队落地真实校园项目。构建众包平台，让每位学生都成为无障碍审计员：QR 标签校园设施、30 秒内移动端上报、FMO 用 Power BI 仪表盘、AI 预测性维护。</p>
                         <div class="proj-links">
                             <a href="#" onclick="openProjectModal('access');return false;"><i class="fa fa-expand"></i> 总览</a>
                             <a href="access-cityu-hk.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Proposal deck</a>
@@ -1002,7 +946,7 @@
 
 <!-- Beach clean-ups / high school -->
                 <div class="proj-card" data-sdg="sdg14">
-                    <div class="proj-img"><img src="eco-club-2.jpg" alt="Beach clean-up with the eco club"></div>
+                    <div class="proj-img"><img src="eco-club-2.jpg" alt="普吉岛迈考海滩清理（环保社）"></div>
                     <div class="proj-body">
                         <div class="proj-tags">
                             <span class="proj-tag">一切开始的地方</span>
@@ -1020,6 +964,75 @@
         </div>
     </section>
 
+    <!-- ============ 技能 ============ -->
+    <section id="skills" class="alt">
+        <div class="container">
+            <div class="section-kicker">技能</div>
+            <h2 class="section-title">技能</h2>
+
+            <div class="kw-groups">
+                <div class="kw-group">
+                    <div class="kw-label">语言</div>
+                    <span class="kw">普通话（母语）</span><span class="kw">英语 — IELTS 7.0，职业工作级</span><span class="kw">粤语（流利）</span><span class="kw">泰语（基础）</span><span class="kw">法语（基础）</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">AI、数据与数字化</div>
+                    <span class="kw">Python</span><span class="kw">Power BI</span><span class="kw">高级 Excel（VBA、Power Query）</span><span class="kw">Microsoft Copilot Studio 与 AI 智能体</span><span class="kw">Power Apps 与 Power Automate</span><span class="kw">Dataverse 与 RAG 知识库</span><span class="kw">提示词工程</span><span class="kw">SQL（入门）</span><span class="kw">生成式 AI — ChatGPT、Midjourney、Stable Diffusion</span><span class="kw">OriginLab</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">工程、BIM 与数字化建模</div>
+                    <span class="kw">Revit</span><span class="kw">Dynamo</span><span class="kw">Navisworks</span><span class="kw">AutoCAD / AutoCAD LT</span><span class="kw">Civil 3D</span><span class="kw">Fusion 360</span><span class="kw">ANSYS Fluent</span><span class="kw">OpenFOAM</span><span class="kw">COMSOL</span><span class="kw">Aspen Plus</span><span class="kw">BIM 与资产信息管理</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">可持续、气候与能源</div>
+                    <span class="kw">GHG 核算与碳足迹</span><span class="kw">生命周期评估（LCA）</span><span class="kw">气候风险评估——物理与转型风险</span><span class="kw">TCFD / ISSB / GRI / CDP</span><span class="kw">NGFS / IEA 情景分析</span><span class="kw">CCUS</span><span class="kw">氢能与低碳能源路径</span><span class="kw">循环经济与资源回收</span><span class="kw">可持续能源系统</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">研究与技术分析</div>
+                    <span class="kw">实验设计</span><span class="kw">材料表征</span><span class="kw">统计分析</span><span class="kw">文献综述与证据综合</span><span class="kw">技术研究与报告</span><span class="kw">热流体分析</span><span class="kw">多相流系统</span><span class="kw">碳与生态建模</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">项目、风险与治理</div>
+                    <span class="kw">项目管理</span><span class="kw">风险登记册与 PESTLE 分析</span><span class="kw">项目保障与阶段门审查</span><span class="kw">FEED 与技术文件审查</span><span class="kw">NEC4 合同文件</span><span class="kw">QA/QC</span><span class="kw">WBS 与项目控制</span>
+                </div>
+                <div class="kw-group">
+                    <div class="kw-label">设计、传播与创意</div>
+                    <span class="kw">Adobe Creative Suite — Photoshop、Illustrator、InDesign、Premiere Pro</span><span class="kw">技术与创意写作</span><span class="kw">视频剪辑</span><span class="kw">UX/UI 设计</span><span class="kw">产品设计与升级再造</span><span class="kw">品牌与视觉叙事</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ ABOUT & PHILOSOPHY ============ -->
+    <section id="about">
+        <div class="container">
+            <div class="section-kicker">关于我</div>
+            <h2 class="section-title">一只黄蝴蝶，如何带我走到今天</h2>
+            <div class="about-split">
+                <div>
+                    <p>我在内陆长大，离海很远。第一次下海游泳是在北京附近的海滩，那年八岁——我走出水面时，一只黄蝴蝶轻轻落在我头上。那一刻，大海对我而言是无边无际的：美丽、脆弱，又充满生机。</p>
+                    <p>后来我去普吉岛上中学，海边走路五分钟就到——我看见珊瑚白化、塑料堆积、海岸线年复一年被侵蚀。我开始组织海滩清理、领导环保社，从此再没停下。这个习惯成了我的事业：在中电搭建排放追踪 Power BI 看板与 RAG 企业 AI 助手（文档匹配准确率从 33% 提升至 66%）；在西湖大学合著碳通量 UCST 框架并发布于 SSRN（2026）；带团队晋级 HK Tech 300 半决赛。</p>
+                    <blockquote class="pull">「我们是世界的创造者，也是它的毁灭者。这不是我想要的世界，而我们已没有时间。」</blockquote>
+                </div>
+                <div class="about-photo">
+                    <img src="photo-linda.jpg" alt="中电实习，香港">
+                    <div class="caption">在中电实习期间，摄于液化天然气（LNG）码头。</div>
+                </div>
+            </div>
+
+            <div class="edu-strip">
+                <div>
+                    <div class="school">香港城市大学</div>
+                    <div class="detail">能源科学及工程工学学士 · 2023年9月 – 2027年6月（预计）</div>
+                </div>
+                <div class="detail">核心课程： <b>气候变化与适应 (A+)</b>, <b>项目管理 (A+)</b>, <b>可持续与可再生能源 (A)</b></div>
+                <div class="gpa">GPA 3.37 / 4.30</div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- ============ DOCUMENTS & CERTIFICATIONS ============ -->
     <section id="documents">
         <div class="container">
@@ -1029,6 +1042,11 @@
             <table class="cert-table">
                 <thead><tr><th>Item</th><th>Details</th><th>Year</th></tr></thead>
                 <tbody>
+        <tr data-hcat="certs">
+            <td class="cert-name">个人简历</td>
+            <td class="cert-details"><a href="liu-yingge-cv.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> 刘迎格 — 简历（PDF）</a></td>
+            <td class="cert-year">2026</td>
+        </tr>
         <tr data-hcat="certs">
             <td class="cert-name">精神健康急救（MHFA）认证</td>
             <td class="cert-details"><a href="mental-health-first-aid-cert.jpg" target="_blank"><i class="fa fa-file-image-o"></i> 证书</a> · 12 小时 MHFA 标准课程 · 由香港心理衛生會签发（获澳洲 Mental Health First Aid International 授权）</td>
@@ -1053,11 +1071,6 @@
             <td class="cert-name">半程马拉松完赛</td>
             <td class="cert-details"><a href="marathons-cert.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> 证书</a> · <a href="half-marathon.jpg" target="_blank"><i class="fa fa-file-image-o"></i> 完赛照片</a> · <a href="charity-run.jpg" target="_blank"><i class="fa fa-file-image-o"></i> 慈善跑</a> · <a href="running.jpg" target="_blank"><i class="fa fa-file-image-o"></i> 比赛日</a> · <a href="charity-run-past.jpg" target="_blank"><i class="fa fa-file-image-o"></i> 慈善跑（过往）</a></td>
             <td class="cert-year">2026</td>
-        </tr>
-        <tr data-hcat="certs">
-            <td class="cert-name">空手道 — 持续练习</td>
-            <td class="cert-details"><a href="karate.png" target="_blank"><i class="fa fa-file-image-o"></i> 训练照片</a> · 自 2025 年起练习空手道——通过规律训练保持自律、体能与专注力</td>
-            <td class="cert-year">2025 – Now</td>
         </tr>
         <tr data-hcat="certs">
             <td class="cert-name">城大可持续发展学生社团 主席</td>
@@ -1180,8 +1193,8 @@
             <td class="cert-year">2023</td>
         </tr>
         <tr data-hcat="certs">
-            <td class="cert-name">Kathu 半程马拉松 — 10.5K 完赛</td>
-            <td class="cert-details"><a href="running-10-5km.jpg" target="_blank"><i class="fa fa-file-image-o"></i> 奖牌与号码布</a> · Kathu 半程马拉松 2022 · 普吉岛</td>
+            <td class="cert-name">喀图半程马拉松 — 10.5K 完赛</td>
+            <td class="cert-details"><a href="running-10-5km.jpg" target="_blank"><i class="fa fa-file-image-o"></i> 奖牌与号码布</a> · 喀图半程马拉松 2022 · 普吉岛</td>
             <td class="cert-year">2022</td>
         </tr>
         <tr data-hcat="certs">
@@ -1245,7 +1258,7 @@
         "bullets": [
             "综述 20+ 篇近期文献并归纳研究空白；每周汇报研究进展。",
             "用 Python 处理数据集，通过统计分析识别关键性能趋势。",
-            "合著论文《整合跨生态尺度的碳通量：一个守恒约束的 UCST 建模框架》，投稿于 Ecological Modelling（Elsevier）。",
+            "合著论文《整合跨生态尺度的碳通量：一个守恒约束的 UCST 建模框架》，发布于 SSRN（2026），底层模型代码已公开。",
             "<a href=\"https://github.com/cuiweicheng1963/liu-cui\" target=\"_blank\">GitHub 代码</a> · <a href=\"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7417192\" target=\"_blank\">SSRN 阅读</a> · <a href=\"https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5288683\" target=\"_blank\">SSRN 作者主页</a>"
         ],
         "photos": [
@@ -1313,28 +1326,28 @@
                 "caption": "市集产品"
             },
             {
-                "src": "sustain-coffee-stones.jpg",
-                "caption": "咖啡渣扩香石"
-            },
-            {
                 "src": "sustain-seed-paper-frames.jpg",
-                "caption": "装裱可种植种子纸"
+                "caption": "升级再造手作小物"
             },
             {
                 "src": "sustain-bodhi-bracelets.jpg",
-                "caption": "菩提籽祈福手串"
+                "caption": "WISE 市集的菩提子手串"
             },
             {
                 "src": "sustain-hand-stamps.jpg",
-                "caption": "手工雕刻定制印章"
-            },
-            {
-                "src": "sustain-botanical-tiles.jpg",
-                "caption": "咖啡渣植物拓印砖"
+                "caption": "手工篆刻与拓印"
             },
             {
                 "src": "sustain-market-stall.jpg",
-                "caption": "WISE 市集摊位陈列"
+                "caption": "刮画创作"
+            },
+            {
+                "src": "sustain-botanical-tiles.jpg",
+                "caption": "咖啡渣香皂与干花摆件"
+            },
+            {
+                "src": "sustain-coffee-stones.jpg",
+                "caption": "咖啡渣扩香石"
             }
         ]
     },
@@ -1462,26 +1475,24 @@
                 "src": "clp-4.jpg",
                 "caption": "中电参访 — 安全视频课堂"
             },
-            {
-                "src": "hike.jpg",
-                "caption": "狮子山清洁徒步"
-            },
-            {
-                "src": "hike-2.jpg",
-                "caption": "海岸步道徒步"
-            }
         ]
     },
     "access": {
         "title": "Access CityUHK — 众包无障碍平台",
-        "org": "LEAD 计划 · 校园进行中",
+        "org": "城大 LEAD 计划 · 十万元资助，进行中",
         "year": "2025 – 至今",
         "summary": "众包平台让每位学生都成为无障碍审计员：QR 标签校园设施、30 秒内移动端上报、FMO 用 Power BI 仪表盘、AI 预测性维护。",
         "bullets": [
-            "香港城市大学校园内持续进行的项目。",
+            "获城大 LEAD 计划资助——城大十万元项目计划，投资学生团队落地校园项目。",
+            "构建众包平台，让每位学生都成为无障碍审计员：QR 标签校园设施、30 秒内移动端上报、FMO 用 Power BI 仪表盘、AI 预测性维护。",
             "方案提案：<a href=\"access-cityu-hk.pdf\" target=\"_blank\">Access CityUHK.pdf</a>"
         ],
-        "photos": []
+        "photos": [
+            {
+                "src": "access-cityu-hk-cover.jpg",
+                "caption": "Access CityUHK 提案封面"
+            }
+        ]
     },
     "goattech": {
         "title": "GoatTech — SolarGrow、HydroFarm 与 Carbon Falcon",
@@ -1512,36 +1523,44 @@
         ],
         "photos": [
             {
-                "src": "highschool-ecodesign.png",
-                "caption": "环保设计项目"
+                "src": "eco-club-2.jpg",
+                "caption": "与可持续迈考基金会一起海滩清理"
             },
             {
                 "src": "ecoclub.jpg",
                 "caption": "环保社海滩清洁"
             },
             {
-                "src": "eco-club-1.jpg",
-                "caption": "环保社团队"
-            },
-            {
-                "src": "eco-club-2.jpg",
-                "caption": "海滩清洁成果"
-            },
-            {
                 "src": "past-1.jpg",
                 "caption": "海滩清洁日"
             },
             {
-                "src": "past-2.jpg",
-                "caption": "海滩主题画作（个人创作）"
+                "src": "highschool-ecodesign.png",
+                "caption": "环保设计项目"
+            },
+            {
+                "src": "high-school-hike.jpg",
+                "caption": "高中远足"
+            },
+            {
+                "src": "high-school-hike-2.jpg",
+                "caption": "高中海岸徒步"
             },
             {
                 "src": "me-past.jpg",
-                "caption": "普吉岛帆船"
+                "caption": "普吉岛帆船时光"
             },
             {
-                "src": "me-past-highschool.png",
-                "caption": "HeadStart 毕业典礼"
+                "src": "upcycling-past-1.jpg",
+                "caption": "塑料瓶手工课堂"
+            },
+            {
+                "src": "upcycling-past-2.jpg",
+                "caption": "塑料瓶迷你圣诞树"
+            },
+            {
+                "src": "upcycling-past-3.jpg",
+                "caption": "教授塑料手工"
             },
             {
                 "src": "upcycling.jpg",
@@ -1578,14 +1597,6 @@
             {
                 "src": "upcycling-plastic-3.jpg",
                 "caption": "升级再造圣诞树装饰"
-            },
-            {
-                "src": "upcycling-plastic-4.jpg",
-                "caption": "回收塑料吊块"
-            },
-            {
-                "src": "upcycling-plastic-5.jpg",
-                "caption": "回收塑料艺术挂件"
             },
             {
                 "src": "upcycling.png",
